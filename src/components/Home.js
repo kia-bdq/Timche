@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 // import { useState } from 'react';
 
 const Home = () => {
-    
+
     Aos.init();
 
     return ( 
@@ -28,15 +28,36 @@ const Home = () => {
                 <div className="container">
                     <div className="column">
                         <img src={'/images/3.jpg'}  data-aos-delay="100" data-aos-duration="1000" data-aos="fade-up" alt="1"/>
-                        <img src={'/images/2.jpg'}  data-aos-delay="100" data-aos-duration="1000" data-aos="fade-up" alt="2"/>
+                        <img src={'/images/9.jpg'}  data-aos-delay="100" data-aos-duration="1000" data-aos="fade-up" alt="2"/>
                     </div>
                     <div className="column">
-                        <img src={'/images/1.jpg'} data-aos-delay="200" data-aos-duration="1000" data-aos="fade-up" alt="4"/>
+                        <img src={'/images/5.jpg'} data-aos-delay="200" data-aos-duration="1000" data-aos="fade-up" alt="4"/>
                         <img src={'/images/4.jpg'} data-aos-delay="200" data-aos-duration="1000" data-aos="fade-up" alt="3"/>
+
                     </div>
                     <div className="column">
-                        <img src={'/images/5.jpg'} data-aos-delay="300" data-aos-duration="1000" data-aos="fade-up" alt="1"/>
+                        <img src={'/images/2.jpg'} data-aos-delay="300" data-aos-duration="1000" data-aos="fade-up" alt="1"/>
                         <img src={'/images/11.jpg'} data-aos-delay="300" data-aos-duration="1000" data-aos="fade-up" alt="4"/>
+                    </div>
+                </div>
+            </section>
+
+
+            <section className="storesSection">
+            <h2>دکان‌ها</h2>
+                <div className="container">
+                    
+                    <div className="column" data-aos-delay="100" data-aos-duration="1000" data-aos="fade-up">
+                        <img src={'/images/store1.jpg'} alt="Store" />
+                        <h3>نام مغازه</h3>
+                    </div>
+                    <div className="column" data-aos-delay="200" data-aos-duration="1000" data-aos="fade-up">
+                        <img src={'/images/store2.jpg'} alt="Store" />
+                        <h3>نام مغازه</h3>
+                    </div>
+                    <div className="column" data-aos-delay="300" data-aos-duration="1000" data-aos="fade-up">
+                        <img src={'/images/store3.jpg'} alt="Store" />
+                        <h3>نام مغازه</h3>
                     </div>
                 </div>
             </section>

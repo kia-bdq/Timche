@@ -2,7 +2,7 @@
 
 .homeMainDiv{
     padding-top: 0.5rem;
-    padding-bottom: 1rem;
+    // padding-bottom: 3rem;
     font-family: 'Lalezar';
     section{
         margin: 0 2rem;
@@ -53,6 +53,27 @@
         margin-left: 1rem;
     }
 
+    .storesSection {
+        margin: 5rem 0 0 0;
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        background-color: rgba(255, 228, 196, 0.356);
+
+        
+        .column{
+            background-color: white;
+            padding: 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 0 6px;
+        }
+        img{
+            height: 12rem;
+            margin-top: 0;
+        }
+
+    }
+
     @media only screen and (min-width: 800px) {
         .container{
             margin: 0 auto;
@@ -94,15 +115,30 @@
             justify-content: center;
             padding: 0 10%;
             margin-top: 3rem;
+
+            .column {
+                flex: 25%;
+                max-width: 25%;
+                padding: 0 6px;
+            }
         }
 
-        .column {
-            flex: 25%;
-            max-width: 25%;
-            padding: 0 6px;
+        .storesSection .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 10%;
+            margin-top: 3rem;
+
+            .column {
+                flex: 25%;
+                max-width: 25%;
+            }
+
         }
 
         
+ 
     }
 
 }
