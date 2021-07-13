@@ -6,6 +6,10 @@ import "aos/dist/aos.css";
 
 const Home = () => {
 
+    // setInterval(()=>{
+    //     console.log("salam");
+    // }, 2000);
+
     Aos.init();
 
     return ( 

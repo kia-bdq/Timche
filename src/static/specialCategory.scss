@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+.main{
+    padding-top: 8.5rem;
+    font-family: 'Lalezar';
+    text-align: center;
+    margin: 0 5rem;
+
+    .categoryContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

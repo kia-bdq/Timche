@@ -5,7 +5,6 @@
     position: fixed;
     width: 100%;
     z-index: 999;
-    
 
     .logo{
         text-decoration: none;
@@ -65,7 +64,32 @@
             text-decoration: none;
             color: black;
         }
-
+        .dropdown:hover{
+            border-bottom: 3px solid black ;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 120px;
+            margin-top: 3px;
+            margin-right: -2.3rem;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            &:hover{
+                background-color: #f1f1f1;
+            }
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     }
 
     .customNav.opened{

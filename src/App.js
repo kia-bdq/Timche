@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import SpecialCategory from './components/SpecialCategory';
 
 function App() {
   return (
@@ -11,8 +12,11 @@ function App() {
         <Navbar/>
         <div className="content">
           <Switch>
-            <Route path='/'>
+            <Route exact path='/'>
               <Home />
+            </Route>
+            <Route path='/special-category/:category'>
+              <SpecialCategory />
             </Route>
           </Switch>
         </div>

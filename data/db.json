@@ -1,0 +1,28 @@
+{
+    "commodity": [
+      {
+        "name": "commodity 1",
+        "description": "",
+        "category": "clothing",
+        "id": 1
+      },
+      {
+        "name": "commodity 2",
+        "description": "",
+        "category": "shoes",
+        "id": 2
+      },
+      {
+        "name": "commodity 3",
+        "description": "",
+        "category": "shoes",
+        "id": 3
+      },
+      {
+        "name": "commodity 4",
+        "description": "",
+        "category": "clothing",
+        "id": 4
+      }
+    ]
+}

@@ -24,7 +24,14 @@ const Navbar = ({cartCounter}) => {
             <div className="container">
                 <nav className={navOpen ? "customNav opened" : "customNav"}>
                     <ul>
-                        <li><Link to="">دسته بندی</Link></li>
+                        <li className="dropdown"><Link to="#">راسته‌ها</Link>
+                            <div className="dropdown-content">
+                                <Link to="/special-category/clothing">پوشاک</Link>
+                                <Link to="/special-category/shoes">کفش</Link>
+                                <Link to="/special-category/bags">کیف</Link>
+                            </div>
+                        </li>
+
                         <li><Link to='/shop-register'>فروشنده شوید</Link></li>
                         <li><Link to='about-us'>درباره ما</Link></li>
                         <li><Link to='about-us' id='sign-in'>ورود</Link></li>
