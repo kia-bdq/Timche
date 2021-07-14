@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import SpecialCategory from './components/SpecialCategory';
+import CommodityDetails from './components/CommodityDetails';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
             </Route>
             <Route path='/special-category/:category'>
               <SpecialCategory />
+            </Route>
+            <Route path='/commodity/:id'>
+              <CommodityDetails />
             </Route>
           </Switch>
         </div>

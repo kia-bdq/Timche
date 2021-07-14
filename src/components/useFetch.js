@@ -11,13 +11,12 @@ const useFetch = (url) => {
         fetch(url, {signal: abortCont.signal})
             .then(res => {
                 if(!res.ok){
-                    throw Error('could not fetch');
+                    throw Error(res.statusText);
                 }
                 return res.json();
             })
             .then(data => { 
                 setData(data);
-                console.log(data);
                 setIsPending(false);
                 setError(null);
             })
