@@ -4,7 +4,7 @@ import "../static/recommender.scss";
 
 const Recommender = ({category, id}) => {
 
-    const {data: commodities , isPending, error} = useFetch('http://localhost:8000/commodity?category='+category+'&id_ne='+id);
+    const {data: commodities , isPending, error} = useFetch('https://my-json-server.typicode.com/kia-bdq/fake-server/commodity?category='+category+'&id_ne='+id);
     var rec = [];
 
     if(commodities){

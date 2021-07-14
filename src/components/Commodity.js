@@ -4,8 +4,8 @@ import "../static/commodity.scss";
 const Commodity = ({id , name}) => {
 
     return ( 
-        <Link to={"/commodity/"+id} className="commodityCard">
-            <img src={'/images/'+id+'.jpg'} alt="Store" />
+        <Link to={"/Timche/commodity/"+id} className="commodityCard">
+            <img src={'../images/'+id+'.jpg'} alt="Store" />
             <h3>{name}</h3>
         </Link>
      );

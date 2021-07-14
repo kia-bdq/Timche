@@ -6,7 +6,7 @@ import Recommender from "./Recommender";
 
 const CommodityDetails = () => {
     const {id} = useParams();
-    const {data: commodity , isPending, error} = useFetch('http://localhost:8000/commodity/' + id);
+    const {data: commodity , isPending, error} = useFetch('https://my-json-server.typicode.com/kia-bdq/fake-server/commodity/' + id);
     const [size, setSize] = useState("");
     var price = "";
     if(commodity){

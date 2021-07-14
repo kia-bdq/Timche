@@ -13,13 +13,13 @@ function App() {
         <Navbar/>
         <div className="content">
           <Switch>
-            <Route exact path='/'>
+            <Route exact path='/Timche'>
               <Home />
             </Route>
-            <Route path='/special-category/:category'>
+            <Route path='/Timche/special-category/:category'>
               <SpecialCategory />
             </Route>
-            <Route path='/commodity/:id'>
+            <Route path='/Timche/commodity/:id'>
               <CommodityDetails />
             </Route>
           </Switch>

@@ -6,7 +6,7 @@ import useFetch from "../components/useFetch";
 
 const SpecialCategory = () => {
     const { category } = useParams();
-    const {data: commodities , isPending, error} = useFetch('http://localhost:8000/commodity?category='+category);
+    const {data: commodities , isPending, error} = useFetch('https://my-json-server.typicode.com/kia-bdq/fake-server/commodity?category='+category);
     // const {data: commodities , isPending, error} = useFetch('http://localhost:8000/commodity');
     // console.log(commodities)
     
