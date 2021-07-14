@@ -26,7 +26,7 @@ const CommodityDetails = () => {
             { commodity && 
                 <div className="container">
                     <div className="right">
-                        <img src={'/images/'+id+'.jpg'} alt="2"/>
+                        <img src={commodity.picture} alt="2"/>
                     </div>
                     <div className="left">
                         <p id="name">{commodity.name}</p>

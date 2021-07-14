@@ -15,7 +15,6 @@ const Recommender = ({category, id}) => {
             }
         }
     }
-
     return ( 
         <div>
             {error && <div className="container">{error}</div>}
@@ -24,10 +23,10 @@ const Recommender = ({category, id}) => {
                 <div className="outDiv">
                     <h2>محصولات مرتبط</h2>
                     <div className="recommenderDiv">
-                        <Commodity id={rec[0].id} name={rec[0].name} key={rec[0].id}/>
-                        <Commodity id={rec[1].id} name={rec[1].name} key={rec[1].id}/>
-                        <Commodity id={rec[2].id} name={rec[2].name} key={rec[2].id}/>
-                        <Commodity id={rec[3].id} name={rec[3].name} key={rec[3].id}/>
+                        <Commodity id={rec[0].id} name={rec[0].name} key={rec[0].id} picture={rec[0].picture}/>
+                        <Commodity id={rec[1].id} name={rec[1].name} key={rec[1].id} picture={rec[1].picture}/>
+                        <Commodity id={rec[2].id} name={rec[2].name} key={rec[2].id} picture={rec[2].picture}/>
+                        <Commodity id={rec[3].id} name={rec[3].name} key={rec[3].id} picture={rec[3].picture}/>
                     </div>
                 </div>
                 

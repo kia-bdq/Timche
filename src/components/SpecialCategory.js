@@ -21,7 +21,7 @@ const SpecialCategory = () => {
             {error && <div>{error}</div>}
             {isPending && <div> Loading... </div>}
 
-            {commodities && commodities.map((commodity) => (<Commodity id={commodity.id} name={commodity.name} key={commodity.id}/>))}
+            {commodities && commodities.map((commodity) => (<Commodity id={commodity.id} name={commodity.name} picture={commodity.picture} key={commodity.id}/>))}
         </div>
             
         </div>
