@@ -3,11 +3,16 @@
     padding-top: 6rem;
     font-family: 'Lalezar';
     min-height: 70vh;
+    .loading{
+        margin: 0 auto;
+        width: 50%;
+    }
     .container{
         display: flex;
         padding-top: 2rem;
         border-top: 2px solid black;
         flex-wrap: wrap;
+        
         .right{
             flex: 100%;
             width: 100%;
@@ -59,14 +64,16 @@
                     margin: 0 auto;
                     font-size: 1.2rem;
                     padding: 1rem;
-                }
-                
+                    font-family: 'Lalezar';
+                    border: none;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: rgb(97, 80, 58);
+                    }
+                }  
             }
-
         }
     }
-
-
 }
 
 @media only screen and (min-width: 800px){
@@ -74,6 +81,7 @@
     .detailsMainDiv{
         padding-top: 8rem;
         .container{
+            margin: 0 6rem;
 
             .right{
                 flex: 50%;
@@ -91,7 +99,5 @@
     
             }
         }
-    
-    }
-        
+    }  
 }

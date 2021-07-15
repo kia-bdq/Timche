@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import '../static/navbar.scss';
 import {FaBars, FaShoppingCart} from 'react-icons/fa';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 // import logo from '../static/logo 2.png'
 
-const Navbar = ({cartCounter}) => {
-    const [navOpen, setNavOpen] = useState(false)
+const Navbar = () => {
+    const cartCount = useSelector(state => state.cart.count);
+    const [navOpen, setNavOpen] = useState(false);
 
     const openNav = () =>{
         setNavOpen(!navOpen);
@@ -15,10 +17,10 @@ const Navbar = ({cartCounter}) => {
     return ( 
         <div className='head'>
             <div className='container'>
-                <FaShoppingCart className="fs" />
+                <Link to="/Timche/cart"><FaShoppingCart className="fs" /></Link>
                 <Link className="logo" to="/Timche"><h1>Timche</h1></Link>
                 <FaBars onClick={openNav} className='fb'/>
-                {/*{cartCounter>0 && <p id="cartCounter">{cartCounter}</p>}*/}
+                {cartCount>0 && <p id="cartCounter">{cartCount}</p>}
             </div>
 
             <div className="container">
@@ -32,9 +34,9 @@ const Navbar = ({cartCounter}) => {
                             </div>
                         </li>
 
-                        <li><Link to='#'>فروشنده شوید</Link></li>
-                        <li><Link to='#'>درباره ما</Link></li>
-                        <li><Link to='#' id='sign-in'>ورود</Link></li>
+                        <li><Link to='/Timche/shop-register'>فروشنده شوید</Link></li>
+                        <li><Link to='/Timche/about-us'>درباره ما</Link></li>
+                        <li><Link to='/Timche/login' id='sign-in'>ورود</Link></li>
                     </ul>
                 </nav>
             </div>

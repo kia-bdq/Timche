@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+.empty{
+    text-align: center;
+    padding-top: 10rem;
+    min-height: 70vh;
+    font-size: 2.5rem;
+    font-family: "Lalezar";
+}
+
+.mainDiv{
+    padding-top: 8rem;
+    min-height: 70vh;
+    margin: 0 8rem;
+    overflow-x: auto;
+    text-align: center;
+    font-family: 'Lalezar';
+    
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 2rem 0;
+        .sum{
+            flex:15%;
+            max-width: 15%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-height: 8rem;
+            font-size: 1.3rem;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        flex:70%;
+        max-width: 70%;
+
+        li{
+            border-bottom: 1px solid rgba(197, 197, 197, 0.288);
+            padding: 2rem 3rem;
+            
+        }
+
+        .commodityContainer{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: right;
+            align-items: center;
+            .right{
+                flex:10%;
+                max-width: 10%;
+                img{
+                    width: 100%;
+                }
+            }
+            .middleRight{
+                flex:350%;
+                max-width: 35%;
+                padding-right: 2rem;
+            }
+            .name{
+                font-size: 1.4rem;
+                margin-top: 0;
+
+            }
+            .middleLeft{
+                padding-bottom: 0;
+                padding-right: 2rem;
+                // flex:30%;
+                // max-width: 30%;
+                .count{
+                    border: 2px solid rgb(100, 100, 100);
+                    text-align: center;
+                    border-radius: 5px;
+                    p{
+                        display: inline-block;
+                        margin: 0 0.5rem;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                    }
+                    .deactive{
+                        color: rgb(201, 201, 201);
+                    }
+
+                }
+                
+            }
+            .left{
+                flex:40%;
+                max-width: 40%;
+                padding-right: 10rem;
+
+            }
+            
+
+        }
+    }
+}

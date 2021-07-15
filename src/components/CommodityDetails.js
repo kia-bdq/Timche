@@ -4,24 +4,28 @@ import useFetch from "./useFetch";
 import "../static/commodityDetails.scss";
 import Recommender from "./Recommender";
 
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
+
 const CommodityDetails = () => {
     const {id} = useParams();
     const {data: commodity , isPending, error} = useFetch('https://my-json-server.typicode.com/kia-bdq/fake-server/commodity/' + id);
     const [size, setSize] = useState("");
+    const dispatch = useDispatch();
     var price = "";
     if(commodity){
         price = commodity.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    
 
     const handleSize = (s) =>{
         setSize(s);
     }
-    
+
     return ( 
         <div className="detailsMainDiv">
             {error && <div className="container">{error}</div>}
-            {isPending && <div className="container"> Loading... </div>}
+            {isPending && <div className="loading"> <img 
+                src='https://i.pinimg.com/originals/b4/4e/22/b44e229598a8bdb7f2f432f246fb0813.gif' alt="loading..."/> </div>}
 
             { commodity && 
                 <div className="container">
@@ -52,7 +56,8 @@ const CommodityDetails = () => {
 
                         <div>
                             <p>{price} تومان</p>
-                            <p id="addBtn">افزودن به سبد خرید</p>
+                            <button id="addBtn" onClick={size ? () => dispatch(addToCart({id: commodity.id, name:commodity.name, picture:commodity.picture,
+                                    price: commodity.price, size: size, count: 1})) : () => window.alert("سایز را انتخاب کنید")}>افزودن به سبد خرید</button>
                         </div>
                     </div>
                 </div> 

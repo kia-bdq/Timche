@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import myimg from "../images/online-shopping.jpg";
+import useFetch from './useFetch';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 // import { useState } from 'react';
 
 const Home = () => {
 
-    // setInterval(()=>{
-    //     console.log("salam");
-    // }, 2000);
-    // const image2 = require(process.env.PUBLIC_URL+'/images/online-shopping.jpg');
+    const {data: stores , isPending, error} = useFetch('https://my-json-server.typicode.com/kia-bdq/fake-server/stores');
+
 
     Aos.init();
 
@@ -21,8 +21,8 @@ const Home = () => {
                 <div className="rightCol">
                     <h1>یک تیمچه به وسعت ایران</h1>
                     <p>در بازار چرخ بزنید یا خودتان فروشنده شوید!</p>
-                    <Link to="" id="shpAroundBtn" className="tmBtn">بریم گشت زنی</Link>
-                    <Link to="" className="tmBtn">فروشنده شو</Link>
+                    <AnchorLink href="#shpAround" id="shpAroundBtn" className="tmBtn">بریم گشت زنی</AnchorLink>
+                    <Link to="Timche/shop-register" className="tmBtn">فروشنده شو</Link>
                 </div>
                 <div className="leftCol">
                     <img src={myimg} alt="shopping"/>
@@ -30,7 +30,7 @@ const Home = () => {
             </div>
             </section>
             
-            <section className="randomClothes">
+            <section id='shpAround' className="randomClothes">
                 <div className="container">
                     <div className="column">
                         <Link to="/Timche/commodity/1"><img src={'https://i.pinimg.com/750x/2a/40/d4/2a40d4b7a308b3b3988202165cd03429.jpg'}  data-aos-delay="100" data-aos-duration="1000" data-aos="fade-up" alt="1"/></Link>
@@ -48,25 +48,31 @@ const Home = () => {
                 </div>
             </section>
 
+            {error && <div>{error}</div>}
+            {isPending && <div> Loading... </div>}
 
-            <section className="storesSection">
-            <h2>دکان‌ها</h2>
-                <div className="container">
+            {stores && 
+                <section className="storesSection">
+                    <h2>دکان‌ها</h2>
                     
-                    <div className="column" data-aos-delay="100" data-aos-duration="1000" data-aos="fade-up">
-                        <img src={'https://www.shoppingmap.it/storage/boutiques/1406-donne_concept_store.html/gallery/cagliari_1_gallery.jpg'} alt="Store" />
-                        <h3>نام مغازه</h3>
+                    <div className="container">
+                        
+                        <Link to={"/Timche/store/"+ stores[0].id} className="column" data-aos-delay="100" data-aos-duration="1000" data-aos="fade-up">
+                            <img src={stores[0].picture} alt="Store" />
+                            <h3>{stores[0].name}</h3>
+                        </Link>
+                        <Link to={"/Timche/store/"+ stores[1].id} className="column" data-aos-delay="200" data-aos-duration="1000" data-aos="fade-up">
+                            <img src={stores[1].picture} alt="Store" />
+                            <h3>{stores[1].name}</h3>
+                        </Link>
+                        {/*<div className="column" data-aos-delay="300" data-aos-duration="1000" data-aos="fade-up">
+                            <img src={'https://www.yourlittleblackbook.me/wp-content/uploads/2018/11/concept-store-vrouwen-hutspot-2.jpg'} alt="Store" />
+                            <h3>نام مغازه</h3>
+                        </div>*/}
                     </div>
-                    <div className="column" data-aos-delay="200" data-aos-duration="1000" data-aos="fade-up">
-                        <img src={'https://www.visitgroningen.nl/uploads/cache/fb_og_image/uploads/media/5ca2105069510/folk.jpg'} alt="Store" />
-                        <h3>نام مغازه</h3>
-                    </div>
-                    <div className="column" data-aos-delay="300" data-aos-duration="1000" data-aos="fade-up">
-                        <img src={'https://www.yourlittleblackbook.me/wp-content/uploads/2018/11/concept-store-vrouwen-hutspot-2.jpg'} alt="Store" />
-                        <h3>نام مغازه</h3>
-                    </div>
-                </div>
-            </section>
+                </section> 
+            }
+            
         </div>
      );
 }

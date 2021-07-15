@@ -28,6 +28,16 @@
         }
     }
 
+    .randomClothes .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 10%;
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+
+    }
+
     .column {
         flex: 100%;
         max-width: 100%;
@@ -59,19 +69,25 @@
         padding-top: 2rem;
         padding-bottom: 5rem;
         background-color: rgba(255, 228, 196, 0.356);
-
-        
-        .column{
-            background-color: white;
-            padding: 0;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            margin: 0 6px;
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 10%;
+            margin-top: 3rem;
+            .column{
+                background-color: white;
+                padding: 0;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                margin: 0.75rem 6px;
+                flex: 100%;
+                max-width: 100%;
+            }
+            img{
+                height: 9rem;
+                margin-top: 0;
+            }
         }
-        img{
-            height: 12rem;
-            margin-top: 0;
-        }
-
     }
 
     @media only screen and (min-width: 800px) {
@@ -110,11 +126,9 @@
         }
 
         .randomClothes .container{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             padding: 0 10%;
             margin-top: 3rem;
+            padding-top: 4rem;
 
             .column {
                 flex: 25%;
@@ -136,8 +150,6 @@
             }
 
         }
-
-        
  
     }
 

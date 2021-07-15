@@ -19,10 +19,11 @@ const SpecialCategory = () => {
             <div className="categoryContainer">
             
             {error && <div>{error}</div>}
-            {isPending && <div> Loading... </div>}
+            {isPending && <div className="loading"> <img src='https://i.pinimg.com/originals/b4/4e/22/b44e229598a8bdb7f2f432f246fb0813.gif' alt="loading..."/> </div>}
 
-            {commodities && commodities.map((commodity) => (<Commodity id={commodity.id} name={commodity.name} picture={commodity.picture} key={commodity.id}/>))}
-        </div>
+            {commodities && commodities.map((commodity) => (<Commodity id={commodity.id} 
+                name={commodity.name} picture={commodity.picture} key={commodity.id}/>))}
+            </div>
             
         </div>
         
