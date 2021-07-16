@@ -2,6 +2,7 @@ import useFetch from "./useFetch";
 import { useParams } from "react-router";
 import Commodity from "./Commodity";
 import "../static/storePage.scss";
+import loading from "../images/loading.gif";
 
 const StorePage = () => {
     const {id} = useParams();
@@ -11,7 +12,7 @@ const StorePage = () => {
     return ( 
         <div>
             {error && <div className="container">{error}</div>}
-            {isPending && <div className="container"> Loading... </div>}
+            {isPending && <div className="loading"> <img src={loading} alt="loading..."/> </div>}
 
             {store && 
                 <div>
@@ -22,7 +23,7 @@ const StorePage = () => {
                     <div className="commodityContainer">
             
                         {error2 && <div>{error2}</div>}
-                        {isPending2 && <div> Loading... </div>}
+                        {isPending2 && <div className="loading"> <img src={loading} alt="loading..."/> </div>}
 
                         {commodities && commodities.map((commodity) => (<Commodity id={commodity.id}
                              name={commodity.name} picture={commodity.picture} key={commodity.id}/>))}

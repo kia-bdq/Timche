@@ -2,6 +2,7 @@ import "../static/specialCategory.scss";
 import { useParams } from "react-router-dom";
 import Commodity from "./Commodity";
 import useFetch from "../components/useFetch";
+import loading from "../images/loading.gif";
 
 
 const SpecialCategory = () => {
@@ -15,11 +16,12 @@ const SpecialCategory = () => {
             { category==="clothing" && <h2>راسته پوشاک</h2> }
             { category==="shoes" && <h2>راسته کفش</h2> }
             { category==="bags" && <h2>راسته کیف</h2> }
+            {error && <div>{error}</div>}
+            {isPending && <div className="loading"> <img src={loading} alt="loading..."/> </div>}
             
             <div className="categoryContainer">
             
-            {error && <div>{error}</div>}
-            {isPending && <div className="loading"> <img src='https://i.pinimg.com/originals/b4/4e/22/b44e229598a8bdb7f2f432f246fb0813.gif' alt="loading..."/> </div>}
+            
 
             {commodities && commodities.map((commodity) => (<Commodity id={commodity.id} 
                 name={commodity.name} picture={commodity.picture} key={commodity.id}/>))}

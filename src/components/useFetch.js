@@ -7,6 +7,7 @@ const useFetch = (url) => {
 
     useEffect(() => {
         const abortCont = new AbortController();
+        window.scrollTo(0,0);
 
         fetch(url, {signal: abortCont.signal})
             .then(res => {

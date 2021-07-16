@@ -5,9 +5,7 @@ const PageNotFound = () => {
     return ( 
         <div className="notFound">
             <p>404...! یعنی این آدرسی که وارد کردی تو این وبسایت وجود نداره  :(</p>
-            
-            <Link to="/Timche">بریم صفحه اصلی</Link>
-                
+            <Link to="/Timche">بریم صفحه اصلی </Link>
         </div>
      );
 }

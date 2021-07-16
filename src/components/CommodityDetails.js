@@ -6,6 +6,7 @@ import Recommender from "./Recommender";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import loading from "../images/loading.gif";
 
 const CommodityDetails = () => {
     const {id} = useParams();
@@ -21,11 +22,11 @@ const CommodityDetails = () => {
         setSize(s);
     }
 
+
     return ( 
         <div className="detailsMainDiv">
             {error && <div className="container">{error}</div>}
-            {isPending && <div className="loading"> <img 
-                src='https://i.pinimg.com/originals/b4/4e/22/b44e229598a8bdb7f2f432f246fb0813.gif' alt="loading..."/> </div>}
+            {isPending && <div className="loading"> <img src={loading} alt="loading..."/> </div>}
 
             { commodity && 
                 <div className="container">

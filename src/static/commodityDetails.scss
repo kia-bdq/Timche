@@ -4,8 +4,11 @@
     font-family: 'Lalezar';
     min-height: 70vh;
     .loading{
-        margin: 0 auto;
-        width: 50%;
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 40%;
+        }
     }
     .container{
         display: flex;
