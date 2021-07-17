@@ -4,14 +4,16 @@ import useFetch from "./useFetch";
 import "../static/commodityDetails.scss";
 import Recommender from "./Recommender";
 
-import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cartSlice";
-import loading from "../images/loading.gif";
+import { useDispatch} from "react-redux";
+import { addToCart} from "../redux/cartSlice";
+
 
 const CommodityDetails = () => {
     const {id} = useParams();
     const {data: commodity , isPending, error} = useFetch('https://my-json-server.typicode.com/kia-bdq/fake-server/commodity/' + id);
     const [size, setSize] = useState("");
+    const [added, setAdded] = useState(false);
+    const [touched, setTouched] = useState(false);
     const dispatch = useDispatch();
     var price = "";
     if(commodity){
@@ -20,18 +22,20 @@ const CommodityDetails = () => {
 
     const handleSize = (s) =>{
         setSize(s);
+        setAdded(false);
+        setTouched(false);
     }
 
 
     return ( 
         <div className="detailsMainDiv">
             {error && <div className="container">{error}</div>}
-            {isPending && <div className="loading"> <img src={loading} alt="loading..."/> </div>}
+            {isPending && <div className="loading"> <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> </div>}
 
             { commodity && 
                 <div className="container">
                     <div className="right">
-                        <img src={commodity.picture} alt="2"/>
+                        <img src={`${process.env.PUBLIC_URL}/assets/images/${id}.jpg`} alt="2"/>
                     </div>
                     <div className="left">
                         <p id="name">{commodity.name}</p>
@@ -57,8 +61,14 @@ const CommodityDetails = () => {
 
                         <div>
                             <p>{price} تومان</p>
-                            <button id="addBtn" onClick={size ? () => dispatch(addToCart({id: commodity.id, name:commodity.name, picture:commodity.picture,
-                                    price: commodity.price, size: size, count: 1})) : () => window.alert("سایز را انتخاب کنید")}>افزودن به سبد خرید</button>
+                            <p className={added? "addedMsg":"addedMsg hidden"}> به سبد خرید اضافه شد </p>
+                            <button className={added? "addBtn added": "addBtn" } onClick={size ? () => 
+                                    {dispatch(addToCart({id: commodity.id, name:commodity.name, picture:commodity.picture,
+                                    price: commodity.price, size: size, count: 1}));
+                                    setAdded(true);
+                                    setTouched(true);
+                                    setTimeout(()=> setAdded(false), 2000);
+                                    } : () => window.alert("سایز را انتخاب کنید")}>{touched? "یکی دیگه هم اضافه کن" : "افزودن به سبد خرید" }</button>
                         </div>
                     </div>
                 </div> 

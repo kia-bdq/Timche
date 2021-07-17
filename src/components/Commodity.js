@@ -5,7 +5,7 @@ const Commodity = ({id , name, picture}) => {
 
     return ( 
         <Link to={"/Timche/commodity/"+id} className="commodityCard">
-            <img src={picture} alt="Store" />
+            <img src={`${process.env.PUBLIC_URL}/assets/images/${id}.jpg`} alt="Store" />
             <h3>{name}</h3>
         </Link>
      );

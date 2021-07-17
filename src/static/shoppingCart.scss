@@ -76,14 +76,17 @@
                 padding-bottom: 0;
                 flex:100%;
                 max-width: 100%;
+                text-align: center;
+                .trash{
+                    
+                    margin-top: 1rem;
+                }
                 .count{
                     border: 2px solid rgb(100, 100, 100);
                     text-align: center;
                     border-radius: 5px;
                     width: 6rem;
                     margin: 0 auto;
-
-    
                     p{
                         display: inline-block;
                         margin: 0 0.5rem;
@@ -93,9 +96,7 @@
                     .deactive{
                         color: rgb(201, 201, 201);
                     }
-
-                }
-                
+                }     
             }
             .left{
                 text-align: center;
@@ -103,8 +104,7 @@
                 max-width: 100%;
 
             }
-            
-
+        
         }
     }
 }

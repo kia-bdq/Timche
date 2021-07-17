@@ -32,7 +32,7 @@
             color: rgb(114, 96, 74);
             text-align: center;
             #name{
-                font-size: 3.2rem;
+                font-size: 2.2rem;
                 margin-top: 0;
             }
             ul{
@@ -60,7 +60,7 @@
                 font-size: 2rem;
                 margin: 5rem auto;
 
-                #addBtn{
+                .addBtn{
                     background-color: rgb(110, 90, 64);
                     color: white;
                     width: 40%;
@@ -70,10 +70,26 @@
                     font-family: 'Lalezar';
                     border: none;
                     cursor: pointer;
+                    width: 14rem ;
                     &:hover{
                         background-color: rgb(97, 80, 58);
                     }
                 }  
+
+                .hidden{
+                    visibility: hidden;
+                }
+                .addedMsg{
+                    color: rgb(93, 185, 0);
+                    font-size: 1.2rem;
+                    margin: 0.2;
+                }
+                // .added{
+                //     background-color: rgb(104, 207, 0);
+                //     &:hover{
+                //         background-color: rgb(93, 185, 0);
+                //     }
+                // }
             }
         }
     }
@@ -99,6 +115,10 @@
                 flex: 50%;
                 width: 50%;
                 text-align: right;
+                #name{
+                    font-size: 3.2rem;
+                    margin-top: 0;
+                }
     
             }
         }

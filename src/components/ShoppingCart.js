@@ -1,6 +1,8 @@
 import "../static/shoppingCart.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { increment ,decrement } from "../redux/cartSlice";
+import { removeFromCart, increment ,decrement } from "../redux/cartSlice";
+import { FaTrashAlt} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
     
@@ -11,8 +13,8 @@ const ShoppingCart = () => {
 
     return ( 
         <div className="mainDiv">
-            {cartData.length===0 && <div className="empty">سبد خرید شما خالی است.</div>}
-            {cartData.length > 0 && 
+            {sum === 0 && <div className="empty">سبد خرید شما خالی است.</div>}
+            {sum > 0 && 
                 <div className="innerDiv">
                     <h2>سبد خرید</h2> 
                     <div className="container">
@@ -20,12 +22,13 @@ const ShoppingCart = () => {
                         {cartData.map( commodity => 
                             <li key={cartData.indexOf(commodity)}>
                                 <div className="commodityContainer">
-                                    <div className="right"><img src={commodity.picture} alt="commodity"/></div>
+                                    <div className="right"><Link to={"/Timche/commodity/"+commodity.id}><img src={`${process.env.PUBLIC_URL}/assets/images/${commodity.id}.jpg`} alt="commodity"/></Link></div>
                                     <div className="middleRight">
                                         <p className="name">{commodity.name}</p>
                                         <p>سایز: {commodity.size} </p>
                                     </div>
                                     <div className="middleLeft">
+                                        
                                         <div className="count"> 
                                             <p className="plus" onClick={()=> dispatch(increment(cartData.indexOf(commodity)))}>+</p>
                                             <p>{commodity.count}</p>
@@ -33,8 +36,10 @@ const ShoppingCart = () => {
                                             -
                                             </p>
                                          </div>
+
+                                         <FaTrashAlt className="trash" onClick={() => dispatch(removeFromCart(cartData.indexOf(commodity)))}/>
                                     </div>
-                                    <div className="left"><p>{commodity.price}</p></div>
+                                    <div className="left"><p>{commodity.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} تومان</p></div>
                                 </div>
                             </li>
                             ) //end of map function
@@ -42,7 +47,7 @@ const ShoppingCart = () => {
                     </ul>
                     <div className="sum">
                         <p>مجموع</p>
-                        {sum}
+                        {sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} تومان
                     </div>
                     </div>
                 </div>

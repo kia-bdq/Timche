@@ -18,7 +18,7 @@ const Recommender = ({category, id}) => {
     return ( 
         <div>
             {error && <div className="container">{error}</div>}
-            {isPending && <div className="container"> Loading... </div>}
+            {isPending && <div className="loading"> <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> </div>}
             {commodities && rec && 
                 <div className="outDiv">
                     <h2>محصولات مرتبط</h2>
