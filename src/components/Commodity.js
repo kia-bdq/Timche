@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "../static/commodity.scss";
 
-const Commodity = ({id , name, picture}) => {
+const Commodity = ({commodity}) => {
 
     return ( 
-        <Link to={"/Timche/commodity/"+id} className="commodityCard">
-            <img src={`${process.env.PUBLIC_URL}/assets/images/${id}.jpg`} alt="Store" />
-            <h3>{name}</h3>
+        <Link to={"/Timche/commodity/"+commodity.id} className="commodityCard">
+            <img src={`${process.env.PUBLIC_URL}/assets/images/${commodity.id}.jpg`} alt="commodity" />
+            <h3>{commodity.name}</h3>
+            <p>{commodity.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}  تومان </p>
         </Link>
      );
 }

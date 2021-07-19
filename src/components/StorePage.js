@@ -11,7 +11,11 @@ const StorePage = () => {
     return ( 
         <div>
             {error && <div className="container">{error}</div>}
-            {isPending && <div className="loading"> <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> </div>}
+            {isPending && 
+                <div className="loading"> 
+                    <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> 
+                </div>
+            }
 
 
             {store && 
@@ -23,10 +27,13 @@ const StorePage = () => {
                     <div className="commodityContainer">
             
                         {error2 && <div>{error2}</div>}
-                        {isPending2 && <div className="loading"> <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> </div>}
+                        {isPending2 && 
+                            <div className="loading"> 
+                                <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> 
+                            </div>
+                        }
 
-                        {commodities && commodities.map((commodity) => (<Commodity id={commodity.id}
-                             name={commodity.name} picture={commodity.picture} key={commodity.id}/>))}
+                        {commodities && commodities.map((commodity) => (<Commodity commodity={commodity}/>))}
                     </div>
                 </div>
             }

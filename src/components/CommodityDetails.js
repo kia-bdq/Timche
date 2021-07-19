@@ -3,7 +3,6 @@ import { useState } from "react";
 import useFetch from "./useFetch";
 import "../static/commodityDetails.scss";
 import Recommender from "./Recommender";
-
 import { useDispatch} from "react-redux";
 import { addToCart} from "../redux/cartSlice";
 
@@ -16,6 +15,7 @@ const CommodityDetails = () => {
     const [touched, setTouched] = useState(false);
     const dispatch = useDispatch();
     var price = "";
+
     if(commodity){
         price = commodity.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
@@ -26,17 +26,29 @@ const CommodityDetails = () => {
         setTouched(false);
     }
 
+    const add = ()=>{
+        dispatch(addToCart({id: commodity.id, name:commodity.name, picture:commodity.picture,
+        price: commodity.price, size: size, count: 1}));
+        setAdded(true);
+        setTouched(true);
+        setTimeout(()=> setAdded(false), 2000);
+    }
 
     return ( 
         <div className="detailsMainDiv">
             {error && <div className="container">{error}</div>}
-            {isPending && <div className="loading"> <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> </div>}
+            {isPending && 
+                <div className="loading"> 
+                    <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> 
+                </div>
+            }
 
             { commodity && 
                 <div className="container">
                     <div className="right">
                         <img src={`${process.env.PUBLIC_URL}/assets/images/${id}.jpg`} alt="2"/>
                     </div>
+
                     <div className="left">
                         <p id="name">{commodity.name}</p>
                             { commodity.category === "clothing" &&
@@ -62,13 +74,9 @@ const CommodityDetails = () => {
                         <div>
                             <p>{price} تومان</p>
                             <p className={added? "addedMsg":"addedMsg hidden"}> به سبد خرید اضافه شد </p>
-                            <button className={added? "addBtn added": "addBtn" } onClick={size ? () => 
-                                    {dispatch(addToCart({id: commodity.id, name:commodity.name, picture:commodity.picture,
-                                    price: commodity.price, size: size, count: 1}));
-                                    setAdded(true);
-                                    setTouched(true);
-                                    setTimeout(()=> setAdded(false), 2000);
-                                    } : () => window.alert("سایز را انتخاب کنید")}>{touched? "یکی دیگه هم اضافه کن" : "افزودن به سبد خرید" }</button>
+
+                            <button className={added? "addBtn added": "addBtn" } onClick={size ? add : 
+                                () => window.alert("سایز را انتخاب کنید")}>{touched? "یکی دیگه هم اضافه کن" : "افزودن به سبد خرید" }</button>
                         </div>
                     </div>
                 </div> 

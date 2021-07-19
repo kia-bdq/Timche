@@ -15,21 +15,27 @@ const Recommender = ({category, id}) => {
             }
         }
     }
+    
     return ( 
         <div>
             {error && <div className="container">{error}</div>}
-            {isPending && <div className="loading"> <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> </div>}
+
+            {isPending && 
+                <div className="loading"> 
+                    <img src={`${process.env.PUBLIC_URL}/assets/images/loading.gif`} alt="loading..."/> 
+                </div>
+            }   
+
             {commodities && rec && 
                 <div className="outDiv">
                     <h2>محصولات مرتبط</h2>
                     <div className="recommenderDiv">
-                        <Commodity id={rec[0].id} name={rec[0].name} key={rec[0].id} picture={rec[0].picture}/>
-                        <Commodity id={rec[1].id} name={rec[1].name} key={rec[1].id} picture={rec[1].picture}/>
-                        <Commodity id={rec[2].id} name={rec[2].name} key={rec[2].id} picture={rec[2].picture}/>
-                        <Commodity id={rec[3].id} name={rec[3].name} key={rec[3].id} picture={rec[3].picture}/>
+                        <Commodity commodity={rec[0]}/>
+                        <Commodity commodity={rec[1]}/>
+                        <Commodity commodity={rec[2]}/>
+                        <Commodity commodity={rec[3]}/>
                     </div>
                 </div>
-                
             }
         </div>
      );
