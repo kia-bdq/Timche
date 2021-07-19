@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Timche/static/css/main.fff3a943.chunk.css",
-    "main.js": "/Timche/static/js/main.ccab57cf.chunk.js",
-    "main.js.map": "/Timche/static/js/main.ccab57cf.chunk.js.map",
+    "main.css": "/Timche/static/css/main.73c017aa.chunk.css",
+    "main.js": "/Timche/static/js/main.170f1fda.chunk.js",
+    "main.js.map": "/Timche/static/js/main.170f1fda.chunk.js.map",
     "runtime-main.js": "/Timche/static/js/runtime-main.47071be2.js",
     "runtime-main.js.map": "/Timche/static/js/runtime-main.47071be2.js.map",
     "static/css/2.7fc9bc2b.chunk.css": "/Timche/static/css/2.7fc9bc2b.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.60016098.chunk.js.map": "/Timche/static/js/2.60016098.chunk.js.map",
     "index.html": "/Timche/index.html",
     "static/css/2.7fc9bc2b.chunk.css.map": "/Timche/static/css/2.7fc9bc2b.chunk.css.map",
-    "static/css/main.fff3a943.chunk.css.map": "/Timche/static/css/main.fff3a943.chunk.css.map",
+    "static/css/main.73c017aa.chunk.css.map": "/Timche/static/css/main.73c017aa.chunk.css.map",
     "static/js/2.60016098.chunk.js.LICENSE.txt": "/Timche/static/js/2.60016098.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.47071be2.js",
     "static/css/2.7fc9bc2b.chunk.css",
     "static/js/2.60016098.chunk.js",
-    "static/css/main.fff3a943.chunk.css",
-    "static/js/main.ccab57cf.chunk.js"
+    "static/css/main.73c017aa.chunk.css",
+    "static/js/main.170f1fda.chunk.js"
   ]
 }
