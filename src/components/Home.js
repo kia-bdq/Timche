@@ -8,6 +8,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 const Home = () => {
 
     const {data: stores , isPending, error} = useFetch('https://my-json-server.typicode.com/kia-bdq/fake-server/stores');
+    console.log(localStorage);
 
     Aos.init();
 

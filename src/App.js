@@ -9,6 +9,7 @@ import StorePage from './components/StorePage';
 import ShoppingCart from './components/ShoppingCart';
 import PageNotFound from './components/PageNotFound';
 import InProgress from './components/InProgress';
+import LoginRegister from './components/login';
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
               <InProgress />
             </Route>
             <Route exact path='/Timche/login'>
-              <InProgress />
+              <LoginRegister />
             </Route>
             <Route component={PageNotFound} />
           </Switch>
