@@ -1,12 +1,11 @@
 import "./login.scss";
 import { useFormik } from "formik";
-import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Register = () => {
     const [registered,setRegistered] = useState(false);
-    const history = useHistory();
+    // const history = useHistory();
     
     const validate = values =>{
         const errors = {};
